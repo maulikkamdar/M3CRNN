@@ -1,0 +1,2 @@
+# M3CRNN
+Computational Recurrent Neural Network pipeline for predicting MGMT methylation status from Brain MRI scans of Glioblastoma Multiforme patients. We also provide a visualization platform that can deploy this pipeline online using Python Flask, and can be used to click and load each MRI scan and visualize filter outputs. This platform is configurable for any volumetric biomedical data set, as well as a different CRNN pipeline.

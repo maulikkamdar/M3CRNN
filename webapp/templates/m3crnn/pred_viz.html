@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset=utf-8>
+    <title>M3CRNN - Predicting MGMT methylation from MRI scans</title>
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!--<link href="../static/css/libraries/bootstrap.min.css" rel="stylesheet">-->
+    <link href="../static/css/libraries/jquery-ui.min.css" rel="stylesheet">
+      <link href="../static/css/libraries/jumbotron-narrow.css" rel="stylesheet">
+      <link href="../static/css/vision/main.css" rel="stylesheet">
+      <style>
+        .background {
+          fill: #eee;
+        }
+        line {
+          stroke: #fff;
+        }
+        text.active {
+          fill: red;
+        }
+        .ptlist, .mri-annotations, .mri-class  {
+          background-color: #FFFFFF;
+          border: 1px solid #C0C0C0;
+          border: 1px solid rgba(0, 0, 0, 0.2);
+          -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+          -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+          float: left;
+          margin: 10px 20px 12px 0;
+          padding: 4px;
+          width: 100%;
+        }
+        .mri-annotations {
+          padding-left: 20px;
+        }
+        .input-widget {
+          display: inline;
+            height: 31px;
+            width: 180px;
+            padding: 0 2px;
+            background-color: #fff;
+            background-image: none;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+      </style>
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta name="author" content="Maulik R. Kamdar">
+      <meta name="author" content="Lichy Han">
+      <meta name="keywords" content="biomedical, mri, scans, brain, neural, networks, convolutional, recurrent, visualization, graph" />
+      <script src="../static/js/libraries/jquery-1.10.1.min.js" type="text/javascript"></script>
+      <script src="../static/js/libraries/jquery-ui.min.js" type="text/javascript"></script>
+      <script type="text/javascript" src="../static/js/libraries/bootstrap.min.js"></script>
+      <script type="text/javascript" src="../static/js/libraries/d3.v3.min.js"></script>
+      <script> 
+        $(function(){
+          jQuery("#headercontent").load("/header"); 
+        });
+      </script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div id = "headercontent"></div>
+   
+      <div class="header subheader">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li><a href="/m3crnn/filter_viz">Visualize Filter outputs</a></li>
+            <li><a href="/m3crnn/pred_viz">Visualize Prediction results</a></li>
+            <li><a href="/m3crnn/mri_viz">Visualize MRI scans</a></li>
+            <li><a href="/m3crnn/about">About</a></li>
+          </ul>
+        </nav>
+        <h4 class="text-muted">M3CRNN - Predicting MGMT methylation from MRI scans</h4>
+      </div>
+
+      <div class="row-fluid">
+        <div class="col-md-4">
+          <div id="patient_selector" class="btn-group">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Select Examples <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a href="javascript:select_data('tp')">True Positive</a></li>
+              <li><a href="javascript:select_data('fp')">False Positive</a></li>
+              <li><a href="javascript:select_data('fn')">False Negative</a></li>
+              <li><a href="javascript:select_data('tn')">True Negative</a></li>
+            </ul>
+            <span id="curtype" style="margin: 20px; font-size: 20px"></span>
+          </div><br>
+          
+          <div id="patient_list" class="ptlist" style="overflow-y:scroll; height:800px;">
+            <div class="list-group" id="ptall">
+              <button type="button" class="list-group-item">Cras justo odio</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-8" id="mri_viz_space">
+          <span id="scanid" style="margin: 20px; font-size: 20px"></span><br>  
+          <span id="mriinfo" style="margin: 20px"></span>
+          <div class="mri-class" id="mriscan"></div>
+        </div>
+      </div> 
+      <div class="row-fluid">
+        <div class="col-md-12">
+        <footer class="footer">
+            <p>&copy; <a href="http://www.stanford.edu/~maulikrk" target="_blank">Maulik R. Kamdar</a>, 2015</p>
+          </footer>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="../static/js/m3crnn/pred.js"></script>
+  </body>
+</html>

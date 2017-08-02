@@ -1,0 +1,10 @@
+Accuracy after epoch: 1.000000, current_epoch -tr: 0.590959 -te: 0.507157
+Accuracy after epoch: 2.000000, current_epoch -tr: 0.641900 -te: 0.506917
+Accuracy after epoch: 3.000000, current_epoch -tr: 0.684846 -te: 0.490201
+Accuracy after epoch: 4.000000, current_epoch -tr: 0.736346 -te: 0.466897
+Accuracy after epoch: 5.000000, current_epoch -tr: 0.804921 -te: 0.455369
+Accuracy after epoch: 6.000000, current_epoch -tr: 0.864192 -te: 0.472826
+Accuracy after epoch: 7.000000, current_epoch -tr: 0.908992 -te: 0.495471
+Accuracy after epoch: 8.000000, current_epoch -tr: 0.942233 -te: 0.515563
+Accuracy after epoch: 9.000000, current_epoch -tr: 0.960380 -te: 0.531621
+Accuracy after epoch: 10.000000, current_epoch -tr: 0.972595 -te: 0.523551
